@@ -1,0 +1,30 @@
+<h1>Dealer List</h1>
+<% if admin?(current_user) %>
+<a href="<%= new_dealer_path %>" class="btn btn-primary btn-icon-split">
+  <span class="icon text-white-50">
+      <i class="fas fa-flag"></i>
+  </span>
+  <span class="text">Create Dealer</span>
+</a>
+<% end %>
+
+
+<table class="table">
+  <thead>
+    <tr>
+      <th>ID</th>
+      <th>Name</th>
+      <th>Location</th>
+      <th>Actions</th>
+  </thead>
+  <tbody>
+    <% @dealers.each do |dealer| %>
+    <tr>
+      <td><%= dealer.id %></td>
+      <td><%= dealer.name %></td>
+      <td><%= dealer.location %></td>
+      <td><%= link_to "Details", dealer_path(dealer), class: 'btn btn-primary' %></td>
+    </tr>
+    <% end %>
+  </tbody>
+</table>

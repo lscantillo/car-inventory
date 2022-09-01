@@ -1,0 +1,43 @@
+<div class="row">
+  <div class="col-lg-12">
+    <h1>Car Details</h1>
+    <%= link_to "Back to cars", cars_path, class: 'btn btn-secondary' %>
+    <% if admin?(current_user) %>
+     <%= link_to "Edit", edit_car_path(@car), class: 'btn btn-primary' %>
+     <%= link_to "Delete", @car, class: 'btn btn-danger', data: { 'turbo-method': :delete, 'turbo-confirm': 'Are you sure?' } %>
+    <% end %>
+    <div class="card" style="padding: 20px;">
+      <table class="table">
+        <tr>
+          <td><b>Car Name:</b></td>
+          <td><%= @car.name %></td>
+        </tr>
+        <tr>
+          <td><b>Year:</b></td>
+          <td><%= @car.year %></td>
+        </tr>
+        <tr>
+          <td><b>Brand:</b></td>
+          <td><%= @car.brand %></td>
+        </tr>
+        <tr>
+          <td><b>Condition:</b></td>
+          <td><%= @car.state %></td>
+        </tr>
+        <tr>
+          <td><b>Dealers:</b></td>
+          <td><%= @car.dealers.pluck(:name).join(', ') %></td>
+        </tr>
+          <td><b>Created at:</b></td>
+          <td><%= @car.created_at %></td>
+        </tr>
+        <tr>
+          <td><b>Updated at:</b></td>
+          <td><%= @car.updated_at %></td>
+        </tr>
+      </table>
+    </div>
+  </div>
+</div>
+<br>
+

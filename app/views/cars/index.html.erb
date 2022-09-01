@@ -1,0 +1,39 @@
+<h1>Car List</h1>
+<% if admin?(current_user) %>
+<a href="<%= new_car_path %>" class="btn btn-primary btn-icon-split">
+  <span class="icon text-white-50">
+      <i class="fas fa-flag"></i>
+  </span>
+  <span class="text">Create Car</span>
+</a>
+<% end %>
+
+
+<table class="table">
+  <thead>
+    <tr>
+      <th>ID</th>
+      <th>Name</th>
+      <th>Year</th>
+      <th>Brand</th>
+      <th>Price</th>
+      <th>Condition</th>
+      <th>Dealer</th>
+      <th>Actions</th>
+  </thead>
+  <tbody>
+    <% @cars.each do |car| %>
+    <tr>
+      <td><%= car.id %></td>
+      <td><%= car.name %></td>
+      <td><%= car.year %></td>
+      <td><%= car.brand %></td>
+      <td><%= car.price %></td>
+      <td><%= car.state %></td>
+      <td><%= car.dealers.pluck(:name).join(', ') %></td>
+      <td><%= link_to "Details", car_path(car), class: 'btn btn-primary' %></td>
+    </tr>
+    <% end %>
+  </tbody>
+</table>
+

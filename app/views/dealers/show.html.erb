@@ -1,0 +1,30 @@
+<div class="row">
+  <div class="col-lg-12">
+    <h1>Dealer Details</h1>
+    <%= link_to "Back to dealers", dealers_path, class: 'btn btn-secondary' %>
+    <% if admin?(current_user) %>
+    <%= link_to "Edit", edit_dealer_path(@dealer), class: 'btn btn-primary' %>
+    <%= link_to "Delete", @dealer, class: 'btn btn-danger', data: { 'turbo-method': :delete, 'turbo-confirm': 'Are you sure?' } %>
+    <% end %>
+    <div class="card" style="padding: 20px;">
+      <table class="table">
+        <tr>
+          <td><b>Dealer Name:</b></td>
+          <td><%= @dealer.name %></td>
+        </tr>
+        <tr>
+          <td><b>Location:</b></td>
+          <td><%= @dealer.location %></td>
+        </tr>
+          <td><b>Created at:</b></td>
+          <td><%= @dealer.created_at %></td>
+        </tr>
+        <tr>
+          <td><b>Updated at:</b></td>
+          <td><%= @dealer.updated_at %></td>
+        </tr>
+      </table>
+    </div>
+  </div>
+</div>
+<br>
