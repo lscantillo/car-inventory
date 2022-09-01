@@ -29,11 +29,11 @@
           <td><%= @car.dealers.pluck(:name).join(', ') %></td>
         </tr>
           <td><b>Created at:</b></td>
-          <td><%= @car.created_at %></td>
+          <td><%= @car.created_at.strftime('%b %d, %Y') %></td>
         </tr>
         <tr>
           <td><b>Updated at:</b></td>
-          <td><%= @car.updated_at %></td>
+          <td><%= @car.updated_at.strftime('%b %d, %Y') %></td>
         </tr>
       </table>
     </div>

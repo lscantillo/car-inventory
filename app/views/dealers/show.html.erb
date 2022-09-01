@@ -17,11 +17,11 @@
           <td><%= @dealer.location %></td>
         </tr>
           <td><b>Created at:</b></td>
-          <td><%= @dealer.created_at %></td>
+          <td><%= @dealer.created_at.strftime('%b %d, %Y') %></td>
         </tr>
         <tr>
           <td><b>Updated at:</b></td>
-          <td><%= @dealer.updated_at %></td>
+          <td><%= @dealer.updated_at.strftime('%b %d, %Y') %></td>
         </tr>
       </table>
     </div>
