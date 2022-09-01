@@ -35,12 +35,12 @@ For install gems and create database:
 
 ```sh
 bundle install
+gem install foreman
 rails db:create
 rails db:seed
 ```
 
 ## Run 
 ```sh
-gem install foreman
 foreman start
 ```
