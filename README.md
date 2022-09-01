@@ -1,24 +1,46 @@
-# README
+# Car Inventory
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
 
-Things you may want to cover:
+# Specifications:
 
-* Ruby version
+- Users can log in and can have type “user” or “admin”
 
-* System dependencies
+- Users can view the inventory of cars and their details
 
-* Configuration
+- “Admin” users can add and delete cars from the inventory Cars
 
-* Database creation
+- Have a monetary price. The price depreciates 2% every month.
 
-* Database initialization
+- Can be new or used
 
-* How to run the test suite
+- Cars are located at a dealership, there may be multiple dealerships
 
-* Services (job queues, cache servers, search engines, etc.)
+Please include at least two tests
 
-* Deployment instructions
+You may choose which kind of tests to write (unit, integration...)
 
-* ...
+
+## Installation
+
+App requires rails,ruby and redis to run:
+
+Clone the repository and move to the folder.
+
+```sh
+git clone <repo_url>
+cd folder_name
+```
+
+For install gems and create database:
+
+```sh
+bundle install
+rails db:create
+rails db:seed
+```
+
+## Run 
+```sh
+gem install foreman
+foreman start
+```

@@ -1,0 +1,3 @@
+depreciate_worker:
+  cron: "*/1 * * * *" #it will search depreciate car price every minute - Real time is two months
+  class: "DepreciateWorker"
