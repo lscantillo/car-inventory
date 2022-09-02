@@ -37,9 +37,14 @@ For install gems and create database:
 bundle install
 gem install foreman
 rails db:create
+rails db:migrate
 rails db:seed
 ```
 
+## Default Users
+admin@mail.com
+user@mail.com
+password:123456
 ## Run 
 ```sh
 foreman start
